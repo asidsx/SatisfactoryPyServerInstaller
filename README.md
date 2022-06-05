@@ -19,7 +19,8 @@ Delete Service Server
 
 Open UDP port 15000,15777,7777
 
-![pyinst](https://user-images.githubusercontent.com/106923482/172064603-e676b6cc-80b6-41fb-ac19-f199311b1274.png)
+![pyinst](https://user-images.githubusercontent.com/106923482/172073409-8160d41d-f37f-4217-8f69-037bc379db49.png)
+
 
 
 For the service to install and uninstall correctly, run the application as an administrator.
