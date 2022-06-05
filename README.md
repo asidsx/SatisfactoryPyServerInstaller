@@ -6,7 +6,7 @@ Start server
 
 Update Server from steam
 
-Install Service nssm
+Install server as Service nssm
 
 Start Service Server
 
