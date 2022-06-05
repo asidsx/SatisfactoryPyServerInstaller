@@ -1,5 +1,8 @@
 # SatisfactoryPyServerInstaller
 
+Download, run in the folder where you want to deploy the server.
+
+
 Istall steamCMD+SatisfactoryServer+nssm
 
 Start server
