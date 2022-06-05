@@ -2,7 +2,7 @@ from tkinter import *
 import requests
 import zipfile
 import os
-
+import tkinter as tk
 
 
 
@@ -38,59 +38,74 @@ def click_button2():
     os.startfile('steamcmd\steamcmd.exe', 'open', '+login anonymous +force_install_dir ..\SatisfactoryServer +app_update 1690800 -beta public validate +quit')
 
 def click_button3():
-
-    os.system('nssm.exe install SatisfactoryServerService %CD%\satisfactoryserver\FactoryServer.exe -unattended')
+    T.delete('1.0', END)
+    Outputfileobject = os.popen('nssm.exe install SatisfactoryServerService %CD%\satisfactoryserver\FactoryServer.exe -unattended')
+    Output = Outputfileobject.read()
+    Outputfileobject.close()
+    T.insert(tk.END, Output)
 
 def click_button4():
     os.startfile('nssm.exe', 'open', 'start SatisfactoryServerService')
 
 def click_button5():
-    os.startfile('nssm.exe', 'open', 'stop SatisfactoryServerService')
+    T.delete('1.0', END)
+    Outputfileobject = os.popen('nssm.exe stop SatisfactoryServerService')
+    Output = Outputfileobject.read()
+    Outputfileobject.close()
+    T.insert(tk.END, Output)
 
 def click_button6():
     os.startfile('nssm.exe', 'open', 'remove SatisfactoryServerService')
 
-
 def click_button7():
-    os.system('powershell.exe New-NetFirewallRule -DisplayName "Allow-Satisfactory-default-inbound-ports" -Direction Inbound -Action Allow -EdgeTraversalPolicy Allow -Protocol UDP -LocalPort 15000,15777,7777')
 
+    T.delete('1.0', END)
+    Outputfileobject=os.popen('powershell.exe New-NetFirewallRule -DisplayName "Allow-Satisfactory-default-inbound-ports" -Direction Inbound -Action Allow -EdgeTraversalPolicy Allow -Protocol UDP -LocalPort 15000,15777,7777')
+    Output=Outputfileobject.read()
+    Outputfileobject.close()
+    T.insert(tk.END, Output)
 
 
 root = Tk()
 root.title("Easy install Satisfactory server")
-root.geometry("300x500")
+root.geometry("660x350")
+T = tk.Text(root, height=20, width=55)
+T.pack(side=tk.LEFT)
+T.pack()
+T.place(x=2, y=20)
 
 btn = Button(text="Install", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button)
-btn.place(relx=.5, rely=.1, anchor="c", height=30, width=130, bordermode=OUTSIDE)
+btn.place(x=450, y=20, height=30, width=130, bordermode=INSIDE)
 
 btn1 = Button(text="run", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button1)
-btn1.place(relx=.5, rely=.2, anchor="c", height=30, width=130, bordermode=OUTSIDE)
+btn1.place(x=450, y=60, height=30, width=130, bordermode=OUTSIDE)
 
 btn2 = Button(text="update", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button2)
-btn2.place(relx=.5, rely=.3, anchor="c", height=30, width=130, bordermode=OUTSIDE)
+btn2.place(x=450, y=100, height=30, width=130, bordermode=OUTSIDE)
 
 btn3 = Button(text="install service", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button3)
-btn3.place(relx=.5, rely=.4, anchor="c", height=30, width=130, bordermode=OUTSIDE)
+btn3.place(x=450, y=140, height=30, width=130, bordermode=OUTSIDE)
 
 btn4 = Button(text="Start Service", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button4)
-btn4.place(relx=.5, rely=.5, anchor="c", height=30, width=130, bordermode=OUTSIDE)
+btn4.place(x=450, y=180, height=30, width=130, bordermode=OUTSIDE)
 
 btn5 = Button(text="Stop Service", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button5)
-btn5.place(relx=.5, rely=.6, anchor="c", height=30, width=130, bordermode=INSIDE)
+btn5.place(x=450, y=220, height=30, width=130, bordermode=INSIDE)
 
 btn6 = Button(text="delete service", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button6)
-btn6.place(relx=.5, rely=.7, anchor="c", height=30, width=130, bordermode=OUTSIDE)
+btn6.place(x=450, y=260, height=30, width=130, bordermode=OUTSIDE)
 
 btn7 = Button(text="Open the default UDP ports", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button7)
-btn7.place(relx=.5, rely=.7, anchor="c", height=30, width=200, bordermode=OUTSIDE)
+btn7.place(x=450, y=300, height=30, width=200, bordermode=OUTSIDE)
+
 
 
 
