@@ -17,6 +17,8 @@ Stop Service Server
 
 Delete Service Server
 
+Open UDP port 15000,15777,7777
+
 ![pyinst](https://user-images.githubusercontent.com/106923482/172064603-e676b6cc-80b6-41fb-ac19-f199311b1274.png)
 
 
