@@ -85,7 +85,7 @@ btn5 = Button(text="Stop Service", background="#555", foreground="#ccc",
 btn5.place(relx=.5, rely=.6, anchor="c", height=30, width=130, bordermode=INSIDE)
 
 btn6 = Button(text="delete service", background="#555", foreground="#ccc",
-             padx="20", pady="11", font="16", command=click_button4)
+             padx="20", pady="11", font="16", command=click_button6)
 btn6.place(relx=.5, rely=.7, anchor="c", height=30, width=130, bordermode=OUTSIDE)
 
 
