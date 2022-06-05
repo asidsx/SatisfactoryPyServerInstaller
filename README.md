@@ -23,4 +23,4 @@ Open UDP port 15000,15777,7777
 
 
 
-For the service to install and uninstall correctly, run the application as an administrator.
+For the service to install and uninstall correctly, open udp port, run the application as an administrator.
