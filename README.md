@@ -19,7 +19,10 @@ Delete Service Server
 
 Open UDP port 15000,15777,7777
 
-![pyinst](https://user-images.githubusercontent.com/106923482/172073409-8160d41d-f37f-4217-8f69-037bc379db49.png)
+Create shortcuts to save files
+
+![pyinst](https://user-images.githubusercontent.com/106923482/172080457-99e0b562-66b0-43bb-aa5a-c2ee8bf319b5.png)
+
 
 
 
