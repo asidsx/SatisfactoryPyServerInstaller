@@ -1,9 +1,18 @@
 from tkinter import *
 import requests
 import zipfile
-import os
+import os , sys
 import tkinter as tk
+import winshell
+from win32com.client import Dispatch
+import win32com.shell.shell as shell
+ASADMIN = 'asadmin'
 
+if sys.argv[-1] != ASADMIN:
+    script = os.path.abspath(sys.argv[0])
+    params = ' '.join([script] + sys.argv[1:] + [ASADMIN])
+    shell.ShellExecuteEx(lpVerb='runas', lpFile=sys.executable, lpParameters=params)
+    sys.exit(0)
 
 
 def click_button():
@@ -45,7 +54,11 @@ def click_button3():
     T.insert(tk.END, Output)
 
 def click_button4():
-    os.startfile('nssm.exe', 'open', 'start SatisfactoryServerService')
+
+    Outputfileobject = os.popen('nssm.exe start SatisfactoryServerService')
+    Output = Outputfileobject.read()
+    Outputfileobject.close()
+    T.insert(tk.END, Output)
 
 def click_button5():
     T.delete('1.0', END)
@@ -57,18 +70,47 @@ def click_button5():
 def click_button6():
     os.startfile('nssm.exe', 'open', 'remove SatisfactoryServerService')
 
+
+
 def click_button7():
 
     T.delete('1.0', END)
-    Outputfileobject=os.popen('powershell.exe New-NetFirewallRule -DisplayName "Allow-Satisfactory-default-inbound-ports" -Direction Inbound -Action Allow -EdgeTraversalPolicy Allow -Protocol UDP -LocalPort 15000,15777,7777')
+    Outputfileobject=os.popen('powershell.exe New-NetFirewallRule -DisplayName "Allow-Satisfactory-default-inbound-ports" -Direction Inbound -Action Allow -EdgeTraversalPolicy Allow -Protocol UDP -LocalPort 15000,15777,7777', 'r')
     Output=Outputfileobject.read()
-    Outputfileobject.close()
+
+    T.insert(tk.END, Output)
+
+def click_button8():
+
+    path = os.path.join( "SaveFile.lnk")
+    target = r"%LOCALAPPDATA%\FactoryGame\Saved\SaveGames"
+    wDir = r"%LOCALAPPDATA%\FactoryGame\Saved\SaveGames"
+    icon = r"%LOCALAPPDATA%\FactoryGame\Saved\SaveGames"
+    shell = Dispatch('WScript.Shell')
+    shortcut = shell.CreateShortCut(path)
+    shortcut.Targetpath = target
+    shortcut.WorkingDirectory = wDir
+    shortcut.IconLocation = icon
+    shortcut.save()
+
+    path = os.path.join("ServiceSaveFile.lnk")
+    target = r"C:\Windows\System32\config\systemprofile\AppData\Local\FactoryGame\Saved\SaveGames\server"
+    wDir = r"C:\Windows\System32\config\systemprofile\AppData\Local\FactoryGame\Saved\SaveGames\server"
+    icon = r"C:\Windows\System32\config\systemprofile\AppData\Local\FactoryGame\Saved\SaveGames\server"
+    shell = Dispatch('WScript.Shell')
+    shortcut = shell.CreateShortCut(path)
+    shortcut.Targetpath = target
+    shortcut.WorkingDirectory = wDir
+    shortcut.IconLocation = icon
+    shortcut.save()
+
+    Output = "shortcut created"
     T.insert(tk.END, Output)
 
 
 root = Tk()
 root.title("Easy install Satisfactory server")
-root.geometry("660x350")
+root.geometry("660x380")
 T = tk.Text(root, height=20, width=55)
 T.pack(side=tk.LEFT)
 T.pack()
@@ -106,6 +148,9 @@ btn7 = Button(text="Open the default UDP ports", background="#555", foreground="
              padx="20", pady="11", font="16", command=click_button7)
 btn7.place(x=450, y=300, height=30, width=200, bordermode=OUTSIDE)
 
+btn7 = Button(text="Create Shortcuts to save", background="#555", foreground="#ccc",
+             padx="20", pady="11", font="16", command=click_button8)
+btn7.place(x=450, y=340, height=30, width=200, bordermode=OUTSIDE)
 
 
 
