@@ -7,7 +7,7 @@ Istall steamCMD+SatisfactoryServer+nssm
 
 Start server
 
-Update Server from steam
+Update Server from steamCMD
 
 Install server as Service nssm
 
