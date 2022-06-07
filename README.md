@@ -7,7 +7,8 @@ Istall steamCMD+SatisfactoryServer+nssm
 
 Start server
 
-Update Server from steamCMD
+Update Server from steamCMD to beta public + Update Server from steamCMD to beta experimental
+
 
 Install server as Service nssm
 
