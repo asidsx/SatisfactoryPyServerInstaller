@@ -15,6 +15,7 @@ if sys.argv[-1] != ASADMIN:
     sys.exit(0)
 
 
+
 def click_button():
     url = 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip'
     r = requests.get(url)
@@ -45,6 +46,8 @@ def click_button1():
 
 def click_button2():
     os.startfile('steamcmd\steamcmd.exe', 'open', '+login anonymous +force_install_dir ..\SatisfactoryServer +app_update 1690800 -beta public validate +quit')
+
+
 
 def click_button3():
     T.delete('1.0', END)
@@ -107,6 +110,9 @@ def click_button8():
     Output = "shortcut created"
     T.insert(tk.END, Output)
 
+def click_button9():
+    os.startfile('steamcmd.exe +login anonymous +force_install_dir C:\GameServers\SatisfactoryServer +app_update 1690800 -beta experimental validate +quit')
+
 
 root = Tk()
 root.title("Easy install Satisfactory server")
@@ -116,6 +122,9 @@ T.pack(side=tk.LEFT)
 T.pack()
 T.place(x=2, y=20)
 
+
+
+
 btn = Button(text="Install", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button)
 btn.place(x=450, y=20, height=30, width=130, bordermode=INSIDE)
@@ -124,9 +133,9 @@ btn1 = Button(text="run", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button1)
 btn1.place(x=450, y=60, height=30, width=130, bordermode=OUTSIDE)
 
-btn2 = Button(text="update", background="#555", foreground="#ccc",
+btn2 = Button(text="update BP", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button2)
-btn2.place(x=450, y=100, height=30, width=130, bordermode=OUTSIDE)
+btn2.place(x=450, y=100, height=30, width=90, bordermode=OUTSIDE)
 
 btn3 = Button(text="install service", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button3)
@@ -148,9 +157,17 @@ btn7 = Button(text="Open the default UDP ports", background="#555", foreground="
              padx="20", pady="11", font="16", command=click_button7)
 btn7.place(x=450, y=300, height=30, width=200, bordermode=OUTSIDE)
 
-btn7 = Button(text="Create Shortcuts to save", background="#555", foreground="#ccc",
+btn8 = Button(text="Create Shortcuts to save", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button8)
-btn7.place(x=450, y=340, height=30, width=200, bordermode=OUTSIDE)
+btn8.place(x=450, y=340, height=30, width=200, bordermode=OUTSIDE)
+
+btn9 = Button(text="to Experimental", background="#555", foreground="#ccc",
+             padx="20", pady="11", font="16", command=click_button9)
+btn9.place(x=542, y=100, height=30, width=112, bordermode=OUTSIDE)
+
+
+
+
 
 
 
