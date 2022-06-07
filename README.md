@@ -21,7 +21,8 @@ Open UDP port 15000,15777,7777
 
 Create shortcuts to save files
 
-![pyinst](https://user-images.githubusercontent.com/106923482/172080457-99e0b562-66b0-43bb-aa5a-c2ee8bf319b5.png)
+![pyinst](https://user-images.githubusercontent.com/106923482/172356874-b24eb7c2-74b5-4946-a9b8-128fe75ac072.png)
+
 
 
 
