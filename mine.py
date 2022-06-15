@@ -6,6 +6,8 @@ import tkinter as tk
 import winshell
 from win32com.client import Dispatch
 import win32com.shell.shell as shell
+
+
 ASADMIN = 'asadmin'
 
 if sys.argv[-1] != ASADMIN:
@@ -111,12 +113,18 @@ def click_button8():
     T.insert(tk.END, Output)
 
 def click_button9():
-    os.startfile('steamcmd.exe +login anonymous +force_install_dir C:\GameServers\SatisfactoryServer +app_update 1690800 -beta experimental validate +quit')
+    os.startfile('steamcmd\steamcmd.exe', 'open',  '+login anonymous +force_install_dir ..\SatisfactoryServer +app_update 1690800 -beta experimental validate +quit')
+
+
+
+
+
+
 
 
 root = Tk()
 root.title("Easy install Satisfactory server")
-root.geometry("660x380")
+root.geometry("660x420")
 T = tk.Text(root, height=20, width=55)
 T.pack(side=tk.LEFT)
 T.pack()
@@ -164,6 +172,7 @@ btn8.place(x=450, y=340, height=30, width=200, bordermode=OUTSIDE)
 btn9 = Button(text="to Experimental", background="#555", foreground="#ccc",
              padx="20", pady="11", font="16", command=click_button9)
 btn9.place(x=542, y=100, height=30, width=112, bordermode=OUTSIDE)
+
 
 
 
