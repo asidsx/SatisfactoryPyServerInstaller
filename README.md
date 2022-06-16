@@ -29,3 +29,6 @@ Create shortcuts to save files
 
 
 For the service to install and uninstall correctly, open udp port, run the application as an administrator.
+
+
+Program already compiled go to https://github.com/asidsx/SatisfactoryPyServerInstaller/releases and download last release.
