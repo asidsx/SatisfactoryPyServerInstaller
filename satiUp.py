@@ -141,15 +141,10 @@ class SatisfactoryServerInstaller(wx.Frame):
         os.system(f'cmd /C "{cmd_command} & timeout 5 & exit"')
 
     def on_create_shortcuts(self, event):
-        self.create_desktop_shortcut()
-        self.create_service_shortcut()
-
-
-    def create_desktop_shortcut(self):
-        path = os.path.join(os.path.expanduser("~"), "Desktop", "SaveFile.lnk")
-        target = os.path.expandvars(r"%LOCALAPPDATA%\FactoryGame\Saved\SaveGames")
-        wDir = os.path.expandvars(r"%LOCALAPPDATA%\FactoryGame\Saved\SaveGames")
-        icon = os.path.expandvars(r"%LOCALAPPDATA%\FactoryGame\Saved\SaveGames")
+        path = os.path.join( "SaveFile.lnk")
+        target = r"%LOCALAPPDATA%\FactoryGame\Saved\SaveGames"
+        wDir = r"%LOCALAPPDATA%\FactoryGame\Saved\SaveGames"
+        icon = r"%LOCALAPPDATA%\FactoryGame\Saved\SaveGames"
         shell = Dispatch('WScript.Shell')
         shortcut = shell.CreateShortCut(path)
         shortcut.Targetpath = target
@@ -157,11 +152,10 @@ class SatisfactoryServerInstaller(wx.Frame):
         shortcut.IconLocation = icon
         shortcut.save()
 
-    def create_service_shortcut(self):
-        path = os.path.join(os.path.expanduser("~"), "Desktop", "ServiceSaveFile.lnk")
-        target = os.path.expandvars(r"C:\Windows\System32\config\systemprofile\AppData\Local\FactoryGame\Saved\SaveGames\server")
-        wDir = os.path.expandvars(r"C:\Windows\System32\config\systemprofile\AppData\Local\FactoryGame\Saved\SaveGames\server")
-        icon = os.path.expandvars(r"C:\Windows\System32\config\systemprofile\AppData\Local\FactoryGame\Saved\SaveGames\server")
+        path = os.path.join("ServiceSaveFile.lnk")
+        target = r"C:\Windows\System32\config\systemprofile\AppData\Local\FactoryGame\Saved\SaveGames\server"
+        wDir = r"C:\Windows\System32\config\systemprofile\AppData\Local\FactoryGame\Saved\SaveGames\server"
+        icon = r"C:\Windows\System32\config\systemprofile\AppData\Local\FactoryGame\Saved\SaveGames\server"
         shell = Dispatch('WScript.Shell')
         shortcut = shell.CreateShortCut(path)
         shortcut.Targetpath = target
