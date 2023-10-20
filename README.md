@@ -22,7 +22,8 @@ Open UDP port 15000,15777,7777
 
 Create shortcuts to save files
 
-![pyinst](https://user-images.githubusercontent.com/106923482/172356874-b24eb7c2-74b5-4946-a9b8-128fe75ac072.png)
+![image](https://github.com/asidsx/SatisfactoryPyServerInstaller/assets/106923482/75b32c53-e359-44c3-8821-b9f3340b11f1)
+
 
 
 
