@@ -41,6 +41,7 @@ Alternatively, you can compile it by installing [Python](https://www.python.org/
 pip install wx
 pip install requests
 pip install zipfile
+pip install pywin32
 pip install pyinstaller
 ```
 
