@@ -2,11 +2,24 @@ import wx
 import requests
 import zipfile
 import os
+import sys
 import subprocess
 import pythoncom
 import shutil
 from win32com.client import Dispatch
-import time
+import ctypes
+
+
+def run_as_admin():
+    if sys.platform != 'win32':
+        return
+
+    try:
+        ASADMIN = 'asadmin'
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, ASADMIN, None, 1)
+    except Exception as e:
+        print("Failed to run as admin:", e)
+        sys.exit(1)
 
 class SatisfactoryServerInstaller(wx.Frame):
     def __init__(self, parent, title):
@@ -46,6 +59,7 @@ class SatisfactoryServerInstaller(wx.Frame):
 
 
     def on_install(self, event):
+        # Загрузка и установка nssm
         url = 'https://nssm.cc/release/nssm-2.24.zip'
         r = requests.get(url)
         with open("nssm-2.24.zip", "wb") as code:
@@ -54,7 +68,11 @@ class SatisfactoryServerInstaller(wx.Frame):
         fantasy_zip = zipfile.ZipFile('nssm-2.24.zip')
         fantasy_zip.extractall('')
         fantasy_zip.close()
+
+        # Копирование nssm.exe
         shutil.copy('nssm-2.24/win64/nssm.exe', '.')
+
+        # Удаление zip-файла
         os.remove("nssm-2.24.zip")
 
         # Загрузка и установка steamcmd
@@ -67,6 +85,7 @@ class SatisfactoryServerInstaller(wx.Frame):
         fantasy_zip.close()
         os.remove("steamcmd.zip")
 
+        # Запуск steamcmd для установки SatisfactoryServer
         command = 'steamcmd/steamcmd.exe'
         args = [
             '+login', 'anonymous',
@@ -149,6 +168,7 @@ class SatisfactoryServerInstaller(wx.Frame):
         shortcut.save()
 
 if __name__ == '__main__':
+    run_as_admin()
     pythoncom.CoInitialize()
     app = wx.App()
     frame = SatisfactoryServerInstaller(None, "Easy install Satisfactory server")
