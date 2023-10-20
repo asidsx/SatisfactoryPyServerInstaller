@@ -33,3 +33,20 @@ For the service to install and uninstall correctly, open udp port, run the appli
 
 
 Program already compiled go to https://github.com/asidsx/SatisfactoryPyServerInstaller/releases and download last release.
+
+---
+
+Alternatively, you can compile it by installing Python and all the dependencies using pip install. For example:
+```
+pip install wx
+pip install requests
+pip install zipfile
+pip install pyinstaller
+```
+
+After that, you can compile the program itself using the command in the command line: 
+```
+pyinstaller satiUp.py --onefile --noconsole
+```
+
+Please note that this process may vary depending on your specific setup and requirements. Make sure to consult the documentation of the packages you are using for detailed instructions on installation and compilation.
