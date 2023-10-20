@@ -22,6 +22,8 @@ Open UDP port 15000,15777,7777
 
 Create shortcuts to save files
 
+**Before creating or launching the service, start the server from the beginning using the "Run" button. Also do this after changing the server version from public to experimental and vice versa.**
+
 ![image](https://github.com/asidsx/SatisfactoryPyServerInstaller/assets/106923482/75b32c53-e359-44c3-8821-b9f3340b11f1)
 
 
