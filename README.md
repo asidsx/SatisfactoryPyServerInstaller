@@ -3,24 +3,23 @@
 Download, run in the folder where you want to deploy the server.
 
 
-Istall steamCMD+SatisfactoryServer+nssm
+`Istall steamCMD+SatisfactoryServer+nssm`
 
-Start server
+`Start server`
 
-Update Server from steamCMD to beta public + Update Server from steamCMD to beta experimental
+`Update Server from steamCMD to beta public + Update Server from steamCMD to beta experimental`
 
+`Install server as Service nssm`
 
-Install server as Service nssm
+`Start Service Server`
 
-Start Service Server
+`Stop Service Server`
 
-Stop Service Server
+`Delete Service Server`
 
-Delete Service Server
+`Open UDP port 15000,15777,7777`
 
-Open UDP port 15000,15777,7777
-
-Create shortcuts to save files
+`Create shortcuts to save files`
 
 **Before creating or launching the service, start the server from the beginning using the "Run" button. Also do this after changing the server version from public to experimental and vice versa.**
 
@@ -56,24 +55,23 @@ pyinstaller satiUp.py --onefile --noconsole
 Скачайте и запустите в папке, где вы хотите развернуть сервер.
 
 
-Установить steamCMD + SatisfactoryServer + nssm
+`Установить steamCMD + SatisfactoryServer + nssm`
 
-Запустить сервер
+`Запустить сервер`
 
-Обновить сервер с помощью steamCMD на публичную бета-версию + Обновить сервер с помощью steamCMD на экспериментальную бета-версию
+`Обновить сервер с помощью steamCMD на публичную бета-версию + Обновить сервер с помощью steamCMD на экспериментальную бета-версию`
 
+`Установить сервер как службу с помощью nssm`
 
-Установить сервер как службу с помощью nssm
+`Запустить службу сервера`
 
-Запустить службу сервера
+`Остановить службу сервера`
 
-Остановить службу сервера
+`Удалить службу сервера`
 
-Удалить службу сервера
+`Открыть UDP-порт 15000, 15777, 7777`
 
-Открыть UDP-порт 15000, 15777, 7777
-
-Создать ярлыки для файлов сохранения
+`Создать ярлыки для файлов сохранения`
 
 **Перед созданием или запуском службы, запустите сервер с помощью кнопки "Run". Также сделайте это после изменения версии сервера с публичной на экспериментальную и наоборот.**
 
