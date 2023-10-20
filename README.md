@@ -1,4 +1,4 @@
-# SatisfactoryPyServerInstaller
+# SatisfactoryPyServerInstaller(Win only)
 
 Download, run in the folder where you want to deploy the server.
 
@@ -36,7 +36,7 @@ Program already compiled go to https://github.com/asidsx/SatisfactoryPyServerIns
 
 ---
 
-Alternatively, you can compile it by installing Python and all the dependencies using pip install. For example:
+Alternatively, you can compile it by installing [Python](https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe) and all the dependencies using pip install. For example:
 ```
 pip install wx
 pip install requests
