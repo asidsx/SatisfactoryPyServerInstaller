@@ -74,10 +74,11 @@ class SatisfactoryServerInstaller(wx.Frame):
         fantasy_zip = zipfile.ZipFile('nssm-2.24.zip')
         fantasy_zip.extractall('')
         fantasy_zip.close()
-
         shutil.copy('nssm-2.24/win64/nssm.exe', '.')
-
-        os.remove("nssm-2.24.zip")
+        if os.path.exists('nssm-2.24.zip'):
+            os.remove('nssm-2.24.zip')
+        if os.path.exists('nssm-2.24'):
+            shutil.rmtree('nssm-2.24')
         
         url = 'https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip'
         r = requests.get(url)
