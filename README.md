@@ -1,4 +1,5 @@
 # SatisfactoryPyServerInstaller(Win only)
+![GitHub all releases](https://img.shields.io/github/downloads/asidsx/SatisfactoryPyServerInstaller/total)
 
 Download, run in the folder where you want to deploy the server.
 
