@@ -8,7 +8,7 @@ Download, run in the folder where you want to deploy the server.
 
 `Start server`
 
-`Update Server from steamCMD to beta public + Update Server from steamCMD to beta experimental`
+`Update Server from steamCMD to Release + Update Server from steamCMD to beta experimental`
 
 `Install server as Service nssm`
 
@@ -61,7 +61,7 @@ pyinstaller satiUp.py --onefile --noconsole
 
 `Запустить сервер`
 
-`Обновить сервер с помощью steamCMD на публичную бета-версию + Обновить сервер с помощью steamCMD на экспериментальную бета-версию`
+`Обновить сервер с помощью steamCMD на Релизную версию + Обновить сервер с помощью steamCMD на экспериментальную бета-версию`
 
 `Установить сервер как службу с помощью nssm`
 
