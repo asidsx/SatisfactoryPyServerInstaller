@@ -57,7 +57,7 @@ class SatisfactoryServerInstaller(wx.Frame):
         self.delete_service_button = wx.Button(panel, label="Delete Service", pos=(10, 260))
         self.delete_service_button.Bind(wx.EVT_BUTTON, self.on_delete_service)
 
-        self.open_ports_button = wx.Button(panel, label="Open UDP Ports", pos=(10, 300))
+        self.open_ports_button = wx.Button(panel, label="Open UDP/TCP 7777 Ports", pos=(10, 300))
         self.open_ports_button.Bind(wx.EVT_BUTTON, self.on_open_ports)
 
         self.create_shortcuts_button = wx.Button(panel, label="Create Shortcuts", pos=(10, 340))
@@ -93,7 +93,7 @@ class SatisfactoryServerInstaller(wx.Frame):
         args = [
             '+login', 'anonymous',
             '+force_install_dir', '..\SatisfactoryServer',
-            '+app_update', '1690800', '-beta', 'public', 'validate', '+quit'
+            '+app_update', '1690800', 'validate', '+quit'
         ]
         subprocess.Popen([command] + args, cwd='steamcmd')
 
@@ -106,7 +106,7 @@ class SatisfactoryServerInstaller(wx.Frame):
         args = [
             '+login', 'anonymous',
             '+force_install_dir', '..\SatisfactoryServer',
-            '+app_update', '1690800', '-beta', 'public', 'validate', '+quit'
+            '+app_update', '1690800', 'validate', '+quit'
         ]
         subprocess.Popen([command] + args, cwd='steamcmd')
 
@@ -138,8 +138,14 @@ class SatisfactoryServerInstaller(wx.Frame):
         os.system(f'cmd /C "{cmd_command} & timeout 3"')
 
     def on_open_ports(self, event):
-        cmd_command = 'powershell.exe New-NetFirewallRule -DisplayName "Allow-Satisfactory-default-inbound-ports" -Direction Inbound -Action Allow -EdgeTraversalPolicy Allow -Protocol UDP -LocalPort 15000,15777,7777'
+        cmd_command = (
+            'powershell.exe New-NetFirewallRule -DisplayName "Allow-Satisfactory-UDP-7777" '
+            '-Direction Inbound -Action Allow -EdgeTraversalPolicy Allow -Protocol UDP -LocalPort 7777; '
+            'powershell.exe New-NetFirewallRule -DisplayName "Allow-Satisfactory-TCP-7777" '
+            '-Direction Inbound -Action Allow -EdgeTraversalPolicy Allow -Protocol TCP -LocalPort 7777'
+        )
         os.system(f'cmd /C "{cmd_command} & timeout 5 & exit"')
+
 
     def on_create_shortcuts(self, event):
         path = os.path.join( "SaveFile.lnk")
