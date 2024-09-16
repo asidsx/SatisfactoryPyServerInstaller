@@ -18,13 +18,14 @@ Download, run in the folder where you want to deploy the server.
 
 `Delete Service Server`
 
-`Open UDP port 15000,15777,7777`
+`Open UDP/TCP 7777 Ports`
 
 `Create shortcuts to save files`
 
 **Before creating or launching the service, start the server from the beginning using the "Run" button. Also do this after changing the server version from public to experimental and vice versa.**
 
-![image](https://github.com/asidsx/SatisfactoryPyServerInstaller/assets/106923482/75b32c53-e359-44c3-8821-b9f3340b11f1)
+![image](https://github.com/user-attachments/assets/2ee5d990-7ba2-46b4-b516-942ad5d60e2d)
+
 
 
 
@@ -70,13 +71,13 @@ pyinstaller satiUp.py --onefile --noconsole
 
 `Удалить службу сервера`
 
-`Открыть UDP-порт 15000, 15777, 7777`
+`Открыть UDP/TCP-порт 7777`
 
 `Создать ярлыки для файлов сохранения`
 
 **Перед созданием или запуском службы, запустите сервер с помощью кнопки "Run". Также сделайте это после изменения версии сервера с публичной на экспериментальную и наоборот.**
 
-![image](https://github.com/asidsx/SatisfactoryPyServerInstaller/assets/106923482/75b32c53-e359-44c3-8821-b9f3340b11f1)
+![image](https://github.com/user-attachments/assets/2ee5d990-7ba2-46b4-b516-942ad5d60e2d)
 
 
 Программа уже скомпилирована, перейдите по ссылке https://github.com/asidsx/SatisfactoryPyServerInstaller/releases и скачайте последний релиз.
