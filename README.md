@@ -1,3 +1,7 @@
+#### Так же не проходите мимо проекта по управлению сервера через API. / Also, don't miss the project for server management via API.
+[satisfactory-python-cli](https://github.com/Feyr/satisfactory-python-cli)
+
+---
 # SatisfactoryPyServerInstaller(Win only)
 ![GitHub all releases](https://img.shields.io/github/downloads/asidsx/SatisfactoryPyServerInstaller/total)
 
