@@ -93,7 +93,7 @@ class SatisfactoryServerInstaller(wx.Frame):
         args = [
             '+login', 'anonymous',
             '+force_install_dir', '..\SatisfactoryServer',
-            '+app_update', '1690800', '-beta', 'public', 'validate', '+quit''
+            '+app_update', '1690800', '-beta', 'public', 'validate', '+quit'
         ]
         subprocess.Popen([command] + args, cwd='steamcmd')
 
